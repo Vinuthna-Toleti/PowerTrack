@@ -1,0 +1,330 @@
+.analytics {
+  min-height: calc(100vh - 80px);
+  padding: 50px 70px;
+  color: white;
+  background: linear-gradient(135deg, #07111f, #0b1f38);
+}
+
+/* Header */
+
+.analytics-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.analytics-header h1 {
+  color: #38bdf8;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.analytics-header p {
+  color: #b8c7d9;
+  font-size: 17px;
+}
+
+
+/* Summary Cards */
+
+.analytics-summary {
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.analytics-card {
+  padding: 25px;
+
+  background: #0b1f38;
+  border: 1px solid #285579;
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  transition: 0.3s;
+}
+
+.analytics-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+
+.analytics-card h3 {
+  color: #b8c7d9;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.analytics-card h2 {
+  color: #38bdf8;
+  font-size: 25px;
+}
+
+
+/* Appliance Analysis */
+
+.analytics-section {
+  max-width: 1000px;
+  margin: 35px auto 0;
+
+  padding: 30px;
+
+  background: #0b1f38;
+  border: 1px solid #285579;
+  border-radius: 15px;
+}
+
+.analytics-section h2 {
+  margin-bottom: 25px;
+}
+
+.no-data {
+  color: #8fa7bd;
+}
+
+
+/* Analysis Items */
+
+.analysis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.analysis-item {
+  padding: 15px;
+
+  background: #07111f;
+  border-radius: 10px;
+  border: 1px solid #285579;
+}
+
+.analysis-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.analysis-info span {
+  font-weight: bold;
+}
+
+.analysis-info strong {
+  color: #38bdf8;
+}
+
+
+/* Progress Bar */
+
+.progress-background {
+  width: 100%;
+  height: 12px;
+
+  background: #172b42;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 10px;
+
+  transition: width 0.5s;
+}
+
+.analysis-item p {
+  margin-top: 8px;
+  color: #8fa7bd;
+  font-size: 14px;
+}
+
+
+/* Energy Insight */
+
+.analytics-insight {
+  max-width: 1000px;
+  margin: 25px auto;
+
+  padding: 25px 30px;
+
+  background: #0b1f38;
+  border: 1px solid #285579;
+  border-radius: 15px;
+}
+
+.analytics-insight h2 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.analytics-insight p {
+  color: #b8c7d9;
+  line-height: 1.6;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .analytics {
+    padding: 40px 25px;
+  }
+
+  .analytics-summary {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   ELECTRICITY ALERTS
+========================= */
+
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
+  background: #07111f;
+  border: 1px solid #8b5a33;
+  border-radius: 12px;
+}
+
+.alert-icon {
+  font-size: 24px;
+}
+
+.alert-item h3 {
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.alert-item p {
+  color: #9db2c8;
+  line-height: 1.5;
+}
+
+.alert-success {
+  margin-top: 20px;
+  padding: 18px;
+  background: #073b2f;
+  border: 1px solid #168b6a;
+  border-radius: 12px;
+}
+
+.alert-success strong {
+  color: #ffffff;
+}
+
+.alert-success p {
+  margin-top: 6px;
+  color: #9db2c8;
+}
+/* =========================
+   ENERGY RECOMMENDATIONS
+========================= */
+
+.recommendation-subtitle {
+  margin-top: 8px;
+  color: #9db2c8;
+  font-size: 14px;
+}
+
+.recommendation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
+  background: #07111f;
+  border: 1px solid #155b87;
+  border-radius: 12px;
+}
+
+.recommendation-icon {
+  font-size: 24px;
+}
+
+.recommendation-item h3 {
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.recommendation-item p {
+  color: #9db2c8;
+  line-height: 1.5;
+}
+/* =========================
+   USAGE PATTERNS
+========================= */
+
+.pattern-subtitle {
+  margin-top: 8px;
+  color: #9db2c8;
+  font-size: 14px;
+}
+
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pattern-card {
+  background: #07111f;
+  border: 1px solid #155b87;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pattern-card span {
+  color: #9db2c8;
+  font-size: 13px;
+}
+
+.pattern-card strong {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.pattern-card small {
+  color: #71879c;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+
+  .pattern-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .pattern-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

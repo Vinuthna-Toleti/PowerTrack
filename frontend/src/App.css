@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #07111f;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   POWERTRACK NAVBAR
+========================= */
+
+.navbar {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  background: #071526;
+
+  border-bottom: 1px solid #173c5d;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: white;
+}
+
+
+.brand-icon {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0795ff,
+      #0756c9
+    );
+
+  color: white;
+
+  font-size: 25px;
+
+  box-shadow:
+    0 0 18px rgba(0, 145, 255, 0.45);
+}
+
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+
+.brand-name {
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: #ffffff;
+}
+
+.brand-name span {
+  color: #21a7ff;
+}
+
+
+.brand-text small {
+  margin-top: 5px;
+
+  color: #718da8;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+.brand-icon {
+  width: 47px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    #0795ff,
+    #0756c9
+  );
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 0 18px rgba(0, 145, 255, 0.45);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.nav-links a {
+  position: relative;
+
+  color: #d2dfeb;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  padding: 27px 0;
+
+  transition: 0.25s;
+}
+
+
+.nav-links a:hover {
+  color: #35adff;
+}
+
+
+.nav-links a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 3px;
+
+  background: #159eff;
+
+  transform: scaleX(0);
+
+  transition: 0.25s;
+}
+
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: auto;
+
+    padding: 15px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 5px 0;
+  }
+
+}
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-button {
+  position: relative;
+
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #d2dfeb;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.logout-button:hover {
+  color: #35adff;
+}
+
+
+/* Blue line on hover */
+
+.logout-button::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 3px;
+
+  background: #159eff;
+
+  transform: scaleX(0);
+
+  transition: 0.25s;
+}
+
+
+.logout-button:hover::after {
+  transform: scaleX(1);
+}
+
+
+.logout-button:focus {
+  outline: none;
+}

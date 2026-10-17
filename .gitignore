@@ -1,0 +1,15 @@
+# Protect local database credentials
+/backend/src/main/resources/application.properties
+/backend/src/main/resources/application.properties.backup
+
+# Ignore generated backend files
+/backend/target/
+
+# Ignore frontend dependencies and builds
+/frontend/node_modules/
+/frontend/dist/
+
+# Ignore environment files
+.env
+.env.*
+!.env.example
