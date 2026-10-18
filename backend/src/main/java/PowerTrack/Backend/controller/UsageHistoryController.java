@@ -1,3 +1,4 @@
+
 package PowerTrack.Backend.controller;
 
 import java.time.LocalDate;
@@ -23,7 +24,12 @@ import PowerTrack.Backend.repository.UsageHistoryRepository;
 @RestController
 @RequestMapping("/api/usage-history")
 @CrossOrigin(
-        origins = "http://localhost:5173",
+        origins = {
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+                "https://powertrack-ashy.vercel.app"
+        },
+        allowedHeaders = "*",
         methods = {
                 RequestMethod.GET,
                 RequestMethod.POST,
@@ -43,7 +49,6 @@ public class UsageHistoryController {
                 usageHistoryRepository;
     }
 
-
     @GetMapping("/user/{userId}")
     public List<UsageHistory> getUserHistory(
             @PathVariable Long userId) {
@@ -51,7 +56,6 @@ public class UsageHistoryController {
         return usageHistoryRepository
                 .findByUserId(userId);
     }
-
 
     /* =========================
        ENERGY PREDICTION
@@ -88,7 +92,6 @@ public class UsageHistoryController {
             return result;
         }
 
-
         double totalUsage = 0;
 
         for (UsageHistory record : history) {
@@ -97,20 +100,16 @@ public class UsageHistoryController {
                     record.getDailyUsage();
         }
 
-
         double averageDailyUsage =
                 totalUsage / history.size();
 
-
         double predictedMonthlyUsage =
                 averageDailyUsage * 30;
-
 
         double predictedBill =
                 calculateBill(
                         predictedMonthlyUsage
                 );
-
 
         result.put(
                 "averageDailyUsage",
@@ -140,7 +139,6 @@ public class UsageHistoryController {
         return result;
     }
 
-
     /* =========================
        BILL CALCULATION
     ========================= */
@@ -153,19 +151,16 @@ public class UsageHistoryController {
         }
 
         if (units <= 30) {
-
             return units * 1.90;
         }
 
         if (units <= 75) {
-
             return
                     30 * 1.90 +
                     (units - 30) * 3.00;
         }
 
         if (units <= 125) {
-
             return
                     30 * 1.90 +
                     45 * 3.00 +
@@ -173,7 +168,6 @@ public class UsageHistoryController {
         }
 
         if (units <= 225) {
-
             return
                     30 * 1.90 +
                     45 * 3.00 +
@@ -182,7 +176,6 @@ public class UsageHistoryController {
         }
 
         if (units <= 400) {
-
             return
                     30 * 1.90 +
                     45 * 3.00 +
@@ -200,12 +193,9 @@ public class UsageHistoryController {
                 (units - 400) * 9.75;
     }
 
-
     private double round(double value) {
-
         return Math.round(value * 100.0) / 100.0;
     }
-
 
     @PostMapping
     public UsageHistory addHistory(
@@ -257,7 +247,6 @@ public class UsageHistoryController {
         );
     }
 
-
     @PutMapping("/{id}")
     public UsageHistory updateHistory(
             @PathVariable Long id,
@@ -296,7 +285,6 @@ public class UsageHistoryController {
                 existingHistory
         );
     }
-
 
     @DeleteMapping("/{id}")
     public void deleteHistory(

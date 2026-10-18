@@ -22,7 +22,12 @@ import PowerTrack.Backend.repository.ApplianceRepository;
 @RestController
 @RequestMapping("/api/appliances")
 @CrossOrigin(
-        origins = "http://localhost:5173",
+        origins = {
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+                "https://powertrack-ashy.vercel.app"
+        },
+        allowedHeaders = "*",
         methods = {
                 RequestMethod.GET,
                 RequestMethod.POST,
@@ -79,7 +84,7 @@ public class ApplianceController {
                 applianceData.getHours()
         );
 
-        // IMPORTANT: Save individual hours for each unit
+        // Save individual hours for each unit
         appliance.setUnitHours(
                 applianceData.getUnitHours()
         );
