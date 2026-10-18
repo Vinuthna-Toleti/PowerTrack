@@ -22,7 +22,8 @@ import java.util.Optional;
 @CrossOrigin(
     origins = {
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "https://powertrack-ashy.vercel.app"
     },
     allowedHeaders = "*",
     methods = {
@@ -40,47 +41,41 @@ public class AuthController {
         this.userRepository = userRepository;
     }
 
-    
+    // REGISTER
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody User user) {
 
+        if (user.getName() == null || user.getName().trim().isEmpty()) {
+            return ResponseEntity.badRequest().body("Name is required");
+        }
 
+        if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
+            return ResponseEntity.badRequest().body("Email is required");
+        }
 
-    
-// REGISTER
-@PostMapping("/register")
-public ResponseEntity<?> register(@RequestBody User user) {
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            return ResponseEntity.badRequest().body("Password is required");
+        }
 
-    if (user.getName() == null || user.getName().trim().isEmpty()) {
-        return ResponseEntity.badRequest().body("Name is required");
+        String email = user.getEmail().trim();
+
+        if (userRepository.findByEmail(email).isPresent()) {
+            return ResponseEntity.badRequest()
+                    .body("Email is already registered");
+        }
+
+        user.setName(user.getName().trim());
+        user.setEmail(email);
+
+        // Set a default tariff when the user registers
+        if (user.getRatePerUnit() == null) {
+            user.setRatePerUnit(0.0);
+        }
+
+        User savedUser = userRepository.save(user);
+
+        return ResponseEntity.ok(savedUser);
     }
-
-    if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
-        return ResponseEntity.badRequest().body("Email is required");
-    }
-
-    if (user.getPassword() == null || user.getPassword().isEmpty()) {
-        return ResponseEntity.badRequest().body("Password is required");
-    }
-
-    String email = user.getEmail().trim();
-
-    if (userRepository.findByEmail(email).isPresent()) {
-        return ResponseEntity.badRequest()
-                .body("Email is already registered");
-    }
-
-    user.setName(user.getName().trim());
-    user.setEmail(email);
-
-    // Set a default tariff when the user registers
-    if (user.getRatePerUnit() == null) {
-        user.setRatePerUnit(0.0);
-    }
-
-    User savedUser = userRepository.save(user);
-
-    return ResponseEntity.ok(savedUser);
-}
-
 
     // LOGIN
     @PostMapping("/login")
@@ -247,7 +242,7 @@ public ResponseEntity<?> register(@RequestBody User user) {
 
         return ResponseEntity.ok(optionalUser.get());
     }
-    
+
     // FORGOT PASSWORD - INITIAL ENDPOINT TEST
     @PostMapping("/forgot-password")
     public ResponseEntity<?> forgotPassword(
@@ -271,5 +266,4 @@ public ResponseEntity<?> register(@RequestBody User user) {
                 )
         );
     }
-
 }
