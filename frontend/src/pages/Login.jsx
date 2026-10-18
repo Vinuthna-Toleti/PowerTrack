@@ -14,7 +14,7 @@ function Login({ onLogin }) {
 
   const [showPassword, setShowPassword] = useState(false)
 
-  const API_URL = 'http://localhost:8080/api/auth'
+  const API_URL = 'https://powertrack-1.onrender.com/api/auth'
 
   async function handleSubmit(e) {
     e.preventDefault()

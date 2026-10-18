@@ -9,8 +9,8 @@ function Appliances() {
   const [appliances, setAppliances] = useState([])
   const [todayHours, setTodayHours] = useState({})
 
-  const API_URL = 'http://localhost:8080/api/appliances'
-  const HISTORY_API_URL = 'http://localhost:8080/api/usage-history'
+  const API_URL = 'https://powertrack-1.onrender.com/api/appliances';
+  const HISTORY_API_URL = 'https://powertrack-1.onrender.com/api/usage-history';
 
   const user = JSON.parse(localStorage.getItem('user'))
   const userId = user?.id

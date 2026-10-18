@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Settings.css";
 
-const API_URL = "http://localhost:8080/api/auth";
-
+const API_URL = "https://powertrack-1.onrender.com/api/auth";
 function getUser() {
   try {
     return JSON.parse(localStorage.getItem("user") || "null");

@@ -14,7 +14,7 @@ function UsageHistory() {
   const [editingId, setEditingId] = useState(null)
   const [editUsage, setEditUsage] = useState('')
 
-  const API_URL = 'http://localhost:8080/api/usage-history'
+  const API_URL ='https://powertrack-1.onrender.com/api/usage-history'
 
   const user = JSON.parse(localStorage.getItem('user'))
   const userId = user?.id

@@ -51,10 +51,8 @@ function Dashboard() {
 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-
-  const API_URL = 'http://localhost:8080/api/appliances'
-  const HISTORY_API_URL = 'http://localhost:8080/api/usage-history'
-
+const API_URL = 'https://powertrack-1.onrender.com/api/appliances';
+const HISTORY_API_URL = 'https://powertrack-1.onrender.com/api/usage-history'
 
   /* =========================
      LOAD APPLIANCES AND HISTORY
@@ -167,7 +165,7 @@ function Dashboard() {
     try {
 
       const response = await fetch(
-        `http://localhost:8080/api/auth/rate/${userId}`,
+       `https://powertrack-1.onrender.com/api/auth/rate/${userId}`,
         {
           method: 'PUT',
           headers: {
@@ -250,7 +248,7 @@ function Dashboard() {
     try {
 
       const response = await fetch(
-        `http://localhost:8080/api/auth/budget/${userId}`,
+        `https://powertrack-1.onrender.com/api/auth/budget/${userId}`,
         {
           method: 'PUT',
           headers: {

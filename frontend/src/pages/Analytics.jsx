@@ -10,10 +10,9 @@ function Analytics() {
   const [error, setError] = useState('')
 
   const API_URL =
-    'http://localhost:8080/api/appliances'
-
+   'https://powertrack-1.onrender.com/api/appliances'
   const HISTORY_API_URL =
-    'http://localhost:8080/api/usage-history'
+    'https://powertrack-1.onrender.com/api/usage-history'
 
   const user = JSON.parse(
     localStorage.getItem('user')
