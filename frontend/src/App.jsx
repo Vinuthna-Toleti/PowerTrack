@@ -40,6 +40,9 @@ function AppContent() {
     localStorage.getItem('isLoggedIn') === 'true'
   )
 
+  // Added state for mobile navbar menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
 
   const handleLogin = () => {
 
@@ -57,6 +60,7 @@ function AppContent() {
     localStorage.removeItem('user')
 
     setIsLoggedIn(false)
+    setIsMenuOpen(false)
 
     navigate('/login')
   }
@@ -68,7 +72,11 @@ function AppContent() {
 
       <nav className="navbar">
 
-        <Link to="/" className="brand">
+        <Link
+          to="/"
+          className="brand"
+          onClick={() => setIsMenuOpen(false)}
+        >
 
           <div className="brand-icon">
             ⚡
@@ -89,36 +97,74 @@ function AppContent() {
         </Link>
 
 
-        <div className="nav-links">
+        {/* Mobile hamburger menu button */}
 
-          <Link to="/">
+        <button
+          type="button"
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="powertrack-nav-links"
+        >
+          {isMenuOpen ? '×' : '☰'}
+        </button>
+
+
+        <div
+          id="powertrack-nav-links"
+          className={`nav-links ${isMenuOpen ? 'open' : ''}`}
+        >
+
+          <Link
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Home
           </Link>
 
-          <Link to="/appliances">
+          <Link
+            to="/appliances"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Appliances
           </Link>
 
-          <Link to="/dashboard">
+          <Link
+            to="/dashboard"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Dashboard
           </Link>
 
-          <Link to="/analytics">
+          <Link
+            to="/analytics"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Analytics
           </Link>
 
-          <Link to="/usage-history">
+          <Link
+            to="/usage-history"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Usage History
           </Link>
 
-          <Link to="/settings">
+          <Link
+            to="/settings"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Settings
           </Link>
 
 
           {!isLoggedIn ? (
 
-            <Link to="/login">
+            <Link
+              to="/login"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Login
             </Link>
 
