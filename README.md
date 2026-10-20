@@ -87,22 +87,7 @@ Results Display: The frontend displays usage summaries, estimated bills, analyti
 - Git
 - GitHub
 - Vercel for frontend deployment
-📁 Project Structure
 
-PowerTrack/
-├── frontend/                 # React application
-│   ├── src/                  # UI components and pages
-│   ├── public/               # Static assets
-│   ├── package.json          # Frontend dependencies
-│   └── vite.config.js        # Vite configuration
-│
-├── backend/                  # Spring Boot application
-│   ├── src/main/java/        # Java source code
-│   ├── src/main/resources/   # Application resources
-│   └── pom.xml               # Maven dependencies
-│
-├── .gitignore                # Excluded files
-└── README.md                 # Project documentation
 
 
 ## ⚡ Electricity Consumption Calculation
@@ -116,7 +101,32 @@ Energy Consumption (kWh) = (Power (W) × Quantity × Hours Used) / 1000
 Estimated Electricity Cost = Energy Consumption (kWh) × Rate per Unit
 
 These calculations provide an estimate based on the entered appliance details and configured electricity rate.
+## 👥 Contributors
+
+**Vinuthna Toleti** — Project Development, Frontend Development & Backend Integration
+
+## 👨‍💻 Author
+
+**Vinuthna Toleti**
+
+Aspiring Software Developer | B.Tech CSE Student
+
+Interested in:
+
+- Software Development
+- Java Programming
+- Data Structures & Algorithms
+- SQL and Database Management
+- Full-Stack Web Development
+
 
 ## 🎯 Project Objective
 
 The objective of PowerTrack is to make household electricity usage easier to understand, help users identify energy-consuming appliances, and support better energy management through usage tracking and estimated billing.
+
+## ⭐ Project
+
+If you find PowerTrack useful or interesting, consider giving the repository a ⭐ on GitHub!
+
+[⭐ Visit PowerTrack on GitHub](https://github.com/Vinuthna-Toleti/PowerTrack)
+
