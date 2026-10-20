@@ -14,6 +14,55 @@ The application combines a React frontend, a Java Spring Boot backend, and a MyS
 - **Analytics:** Explore electricity consumption summaries.
 - **Usage History:** Review recorded usage and estimated bills.
 - **AI-Powered Insights:** Generate energy-saving suggestions based on appliance usage data.
+- 🏗️ System Architecture
+
+PowerTrack follows a full-stack architecture that connects the user interface, backend services, and database.
+
+              ┌──────────────────────────┐
+              │          User            │
+              └────────────┬─────────────┘
+                           │
+                           ▼
+              ┌──────────────────────────┐
+              │     React Frontend       │
+              │    JavaScript + CSS      │
+              │                          │
+              │ Dashboard & Analytics    │
+              │ Appliance Management     │
+              │ Usage History            │
+              └────────────┬─────────────┘
+                           │
+                     REST API Requests
+                           │
+                           ▼
+              ┌──────────────────────────┐
+              │    Spring Boot Backend   │
+              │                          │
+              │ Controllers              │
+              │ Business Logic           │
+              │ Spring Data JPA          │
+              └────────────┬─────────────┘
+                           │
+                           ▼
+              ┌──────────────────────────┐
+              │      MySQL Database      │
+              │                          │
+              │ User Data                │
+              │ Appliance Details        │
+              │ Usage History            │
+              └──────────────────────────┘
+
+🔄 How It Works
+
+User Interaction: Users register, log in, and manage their household appliances through the React interface.
+
+API Communication: The frontend sends HTTP requests to the Spring Boot backend.
+
+Data Processing: Backend controllers and business logic process requests and calculate electricity usage and estimated bills.
+
+Database Operations: Spring Data JPA communicates with MySQL to store and retrieve application data.
+
+Results Display: The frontend displays usage summaries, estimated bills, analytics, and available energy-saving insights.
 
 ## 🛠️ Technologies Used
 
@@ -38,6 +87,46 @@ The application combines a React frontend, a Java Spring Boot backend, and a MyS
 - Git
 - GitHub
 - Vercel for frontend deployment
+
+  📁 Project Structure
+
+The repository contains separate frontend and backend applications.
+
+PowerTrack/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   │   ├── Home
+│   │   │   ├── Dashboard
+│   │   │   ├── Appliances
+│   │   │   ├── Analytics
+│   │   │   ├── UsageHistory
+│   │   │   ├── Login
+│   │   │   ├── Settings
+│   │   │   └── ForgotPassword
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com/powertrack/
+│   │       │       ├── controller/
+│   │       │       ├── entity/
+│   │       │       ├── repository/
+│   │       │       └── service/
+│   │       └── resources/
+│   ├── pom.xml
+│   └── ...
+│
+├── .gitignore
+└── README.md
 
 ## ⚡ Electricity Consumption Calculation
 
