@@ -87,57 +87,23 @@ Results Display: The frontend displays usage summaries, estimated bills, analyti
 - Git
 - GitHub
 - Vercel for frontend deployment
-- ## 📁 Project Structure
-
-The repository contains separate frontend and backend applications.
+📁 Project Structure
 
 PowerTrack/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   │   ├── Home
-│   │   │   ├── Dashboard
-│   │   │   ├── Appliances
-│   │   │   ├── Analytics
-│   │   │   ├── UsageHistory
-│   │   │   ├── Login
-│   │   │   ├── Settings
-│   │   │   └── ForgotPassword
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
+├── frontend/                 # React application
+│   ├── src/                  # UI components and pages
+│   ├── public/               # Static assets
+│   ├── package.json          # Frontend dependencies
+│   └── vite.config.js        # Vite configuration
 │
-├── backend/
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/
-│   │       │   └── com/powertrack/
-│   │       │           ├── controller/
-│   │       │           ├── entity/
-│   │       │           ├── repository/
-│   │       │           └── service/
-│   │       └── resources/
-│   ├── pom.xml
-│   └── ...
+├── backend/                  # Spring Boot application
+│   ├── src/main/java/        # Java source code
+│   ├── src/main/resources/   # Application resources
+│   └── pom.xml               # Maven dependencies
 │
-├── .gitignore
-└── README.md
+├── .gitignore                # Excluded files
+└── README.md                 # Project documentation
 
-
-### Folder Description
-
-- **frontend/** — React and Vite user interface.
-- **pages/** — Main application pages.
-- **components/** — Reusable interface components.
-- **backend/** — Java Spring Boot application.
-- **controller/** — Handles API requests.
-- **entity/** — Represents database entities.
-- **repository/** — Handles database operations.
-- **service/** — Contains business logic, if implemented.
-- **resources/** — Application configuration and other resources.
 
 ## ⚡ Electricity Consumption Calculation
 
