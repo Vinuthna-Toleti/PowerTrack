@@ -87,6 +87,31 @@ Results Display: The frontend displays usage summaries, estimated bills, analyti
 - Git
 - GitHub
 - Vercel for frontend deployment
+- PowerTrack/
+│
+├── frontend/                 (React + Vite)
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Appliances.jsx
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── UsageHistory.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Settings.jsx
+│   │   └── App.jsx
+│   └── package.json
+│
+├── backend/                  (Java + Spring Boot)
+│   ├── controller/
+│   ├── entity/
+│   ├── repository/
+│   ├── BackendApplication.java
+│   └── pom.xml
+│
+├── MySQL Database
+│
+└── README.md
 
 
 
